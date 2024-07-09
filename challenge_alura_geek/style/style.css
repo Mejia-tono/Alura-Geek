@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Press+Start+2P&display=swap');
+
+:root {
+    --cor-primaria: #5300C8;
+    --cor-secundaria: #03318C;
+    --cor-fonte-clara: white;
+    --font-family-primaria: "Press Start 2P", system-ui;
+    --font-family-secundaria: "IBM Plex Mono", monospace;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+main {
+    justify-content: space-between;
+}
+
+.cabecalho {
+    background-color: var(--cor-primaria);
+}
+
+.logo {
+    padding: 0.8em;
+    width: 20em;
+}
+
+/* listagem produtos */
+
+.produtos > h1,  .add-produto > h1{
+    font-family: var(--font-family-primaria);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.container-produtos {
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.card-produto {
+    background-color: var(--cor-primaria);
+    border-radius: 12px;
+    color: var(--cor-fonte-clara);
+    font-family: var(--font-family-secundaria);
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 0.2em, solid, black;
+    margin-right: 10px;
+}
+
+.card-produto__img-produto {
+    padding: 1em;
+}
+
+.card-produto__legenda {
+    padding: 0.6em;
+    font-size: 1.4rem;
+}
+
+
+.card-produto__detalhes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+.card-produto__preco {
+    display: flex;
+    gap:1em;
+    
+}
+
+.card-produto__icone-lixeira {
+    height: 100%;
+    cursor: pointer;
+}
+
+/* formulario add produto */
+
+.add-produto {
+    flex-grow: 0;
+}
+
+.add-produto__container-form {
+    font-family: var(--font-family-secundaria);
+    padding: 1.5em;
+    padding-top: 0em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.input {
+    width: 100%;
+    border: 0.2em, solid, var(--cor-secundaria);
+    border-radius: 33px;
+    padding: 0.5em;
+    font-weight: 500;
+}
+
+.input::placeholder {
+    color: var(--cor-secundaria);
+}
+
+.add-produto__container-form__botoes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-produto__container-form__btn-guardar {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-fonte-clara);
+    border-radius: 12px;
+    padding: 0.5em 2em;
+}
+
+.add-produto__container-form__btn-limpar {
+    border: 0.2em, solid, var(--cor-secundaria);
+    border-radius: 12px;
+    padding: 0.3em 2em;
+    color: var(--cor-secundaria);
+    font-weight: 500;
+}
+
+/* footer */
+
+.rodape {
+    background-color: var(--cor-primaria);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--cor-fonte-clara);
+    font-family: var(--font-family-secundaria);
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+.ib {
+    font-weight: 300;
+}
+
+@media (max-width: 600px) {
+    main {
+        flex-direction: column;
+    }
+
+    .container-produtos {
+        flex-wrap: nowrap;
+        height: 500px;
+        overflow-x: auto;
+    }
+
+    .card-produto {
+        height: 350px;
+    }
+
+    .add-produto__container-form {
+        padding: 0.5em;
+    }
+
+}
+
+@media (min-width: 800px) {
+    .produtos {
+        padding-right: 100px;
+    }
+
+    .add-produto__container-form {
+        width: 450px;
+    }
+}
